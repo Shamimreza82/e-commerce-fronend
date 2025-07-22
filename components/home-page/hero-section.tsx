@@ -14,7 +14,7 @@ const slides = [
   {
     title: "Great deals on everything you need",
     description: "Discover millions of products with fast, free delivery on eligible orders",
-    image: "/placeholder.svg?height=400&width=600",
+    image: "/window.svg",
     ctaPrimary: "Shop Now",
     ctaSecondary: "Learn More",
     bgGradient: "from-blue-600 to-purple-600",
@@ -22,7 +22,7 @@ const slides = [
   {
     title: "New Arrivals Just Landed",
     description: "Be the first to shop our latest collections",
-    image: "/placeholder2.svg?height=400&width=600",
+    image: "/globe.svg",
     ctaPrimary: "Explore Now",
     ctaSecondary: "See Details",
     bgGradient: "from-pink-600 to-red-600",
@@ -30,7 +30,7 @@ const slides = [
   {
     title: "Exclusive Discounts for Members",
     description: "Join now and save big on your favorite products",
-    image: "/placeholder3.svg?height=400&width=600",
+    image: "/file.svg",
     ctaPrimary: "Join Now",
     ctaSecondary: "Learn More",
     bgGradient: "from-green-600 to-teal-600",
@@ -39,7 +39,7 @@ const slides = [
 
 export function HeroSection() {
   return (
-    <div className="relative">
+    <section className="relative">
       <Swiper
         modules={[Navigation, Autoplay]}
         navigation={{
@@ -49,88 +49,90 @@ export function HeroSection() {
         autoplay={{ delay: 6000, disableOnInteraction: false }}
         loop
         slidesPerView={1}
-        className="mx-auto px-4 py-12"
+        className="mx-auto"
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div
-              className={`relative text-white p-6 md:p-16 flex flex-col md:flex-row items-center gap-10 bg-gradient-to-r ${slide.bgGradient}`}
-            >
-              <motion.div
-                className="md:w-1/2 space-y-6"
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, ease: "easeOut" }}
-              >
-                <motion.h1
-                  className="text-4xl md:text-6xl font-extrabold leading-tight drop-shadow-md"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
-                  {slide.title}
-                </motion.h1>
-
-                <motion.p
-                  className="text-lg md:text-xl opacity-90"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.3 }}
-                >
-                  {slide.description}
-                </motion.p>
-
-                <motion.div
-                  className="flex space-x-4"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ duration: 0.6, delay: 0.5 }}
-                >
-                  <Button size="lg" className="bg-orange-500 hover:bg-orange-600 shadow-lg">
-                    {slide.ctaPrimary}
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="text-white border-white hover:bg-white hover:text-gray-900 bg-transparent shadow-lg"
+            <div className={`bg-gradient-to-r ${slide.bgGradient}`}>
+              <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div className="relative text-white py-16 sm:py-24 lg:py-32 flex flex-col md:flex-row items-center gap-12">
+                  <motion.div
+                    className="w-full md:w-1/2 space-y-6 text-center md:text-left"
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, ease: "easeOut" }}
                   >
-                    {slide.ctaSecondary}
-                  </Button>
-                </motion.div>
-              </motion.div>
+                    <motion.h1
+                      className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight drop-shadow-md"
+                      initial={{ opacity: 0, y: -20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.2 }}
+                    >
+                      {slide.title}
+                    </motion.h1>
 
-              <motion.div
-                className="md:w-1/2"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
-                <Image
-                  src={slide.image}
-                  alt={slide.title}
-                  width={600}
-                  height={400}
-                  className="rounded-lg shadow-2xl object-cover"
-                />
-              </motion.div>
+                    <motion.p
+                      className="text-lg md:text-xl opacity-90 max-w-lg mx-auto md:mx-0"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.6, delay: 0.3 }}
+                    >
+                      {slide.description}
+                    </motion.p>
+
+                    <motion.div
+                      className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      transition={{ duration: 0.6, delay: 0.5 }}
+                    >
+                      <Button size="lg" className="bg-orange-500 hover:bg-orange-600 shadow-lg w-full sm:w-auto">
+                        {slide.ctaPrimary}
+                      </Button>
+                      <Button
+                        size="lg"
+                        variant="outline"
+                        className="text-white border-white hover:bg-white hover:text-gray-900 bg-transparent shadow-lg w-full sm:w-auto"
+                      >
+                        {slide.ctaSecondary}
+                      </Button>
+                    </motion.div>
+                  </motion.div>
+
+                  <motion.div
+                    className="hidden md:flex md:w-1/2 items-center justify-center"
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 0.8, delay: 0.4 }}
+                  >
+                    <Image
+                      src={slide.image}
+                      alt={slide.title}
+                      width={500}
+                      height={400}
+                      className="rounded-lg shadow-2xl object-contain w-full h-auto max-h-[400px]"
+                    />
+                  </motion.div>
+                </div>
+              </div>
             </div>
           </SwiperSlide>
         ))}
 
         {/* Navigation Buttons */}
         <button
-          className="swiper-button-prev absolute left-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 rounded-full p-3 shadow-md z-10"
+          className="swiper-button-prev absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 rounded-full p-2 sm:p-3 shadow-md z-10 transition-colors duration-300"
           aria-label="Previous Slide"
         >
-          <ChevronLeft className="h-6 w-6 text-gray-900" />
+          <ChevronLeft className="h-6 w-6 text-white" />
         </button>
         <button
-          className="swiper-button-next absolute right-4 top-1/2 -translate-y-1/2 bg-white/30 hover:bg-white/50 rounded-full p-3 shadow-md z-10"
+          className="swiper-button-next absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 bg-white/20 hover:bg-white/40 rounded-full p-2 sm:p-3 shadow-md z-10 transition-colors duration-300"
           aria-label="Next Slide"
         >
-          <ChevronRight className="h-6 w-6 text-gray-900" />
+          <ChevronRight className="h-6 w-6 text-white" />
         </button>
       </Swiper>
-    </div>
+    </section>
   )
 }

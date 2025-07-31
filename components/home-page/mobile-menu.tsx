@@ -160,7 +160,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           </div>
 
           {/* Search */}
-          <div className="p-4 border-b border-white/10">
+          {/* <div className="p-4 border-b border-white/10">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
               <Input
@@ -170,7 +170,7 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
                 className="pl-10 bg-white/10 border-white/20 text-white placeholder:text-gray-400 focus:border-blue-500"
               />
             </div>
-          </div>
+          </div> */}
 
           {/* Quick Actions */}
           <div className="p-4 border-b border-white/10">
@@ -262,12 +262,12 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
           {/* Settings & Theme Toggle */}
           <div className="p-4 border-t border-white/10 space-y-4">
             <div className="flex items-center justify-between">
-              <div className="flex items-center space-x-3">
+              {/* <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
                   {isDarkMode ? <Moon className="h-4 w-4 text-white" /> : <Sun className="h-4 w-4 text-white" />}
                 </div>
                 <span className="text-white font-medium">Dark Mode</span>
-              </div>
+              </div> */}
             </div>
 
             {/* Social Links */}

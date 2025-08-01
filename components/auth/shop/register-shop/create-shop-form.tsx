@@ -88,7 +88,12 @@ export default function CreateShopForm() {
                       <FormItem>
                         <FormLabel>Shop Name</FormLabel>
                         <FormControl>
-                          <InputWithCharCount placeholder="e.g., Tech Bazaar" field={field} maxLength={30} />
+                          <div>
+                            <Input type="name" placeholder="e.g., Tech Bazaar" {...field} maxLength={40} />
+                            <p className={`text-sm text-right ${(field.value?.length || 0) >= 40 ? "text-red-500" : "text-muted-foreground"}`}>
+                              {field.value?.length || 0} / {40}
+                            </p>
+                          </div>
                         </FormControl>
                         <FormMessage />
                       </FormItem>

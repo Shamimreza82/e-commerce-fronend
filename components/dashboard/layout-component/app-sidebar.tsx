@@ -52,22 +52,14 @@ const data = {
   ],
   navMain: [
     {
-      title: "Playground",
+      title: "Products",
       url: "#",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "History",
-          url: "#",
-        },
-        {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
+          title: "Add product",
+          url: "dashboard/products/add-product",
         },
       ],
     },
